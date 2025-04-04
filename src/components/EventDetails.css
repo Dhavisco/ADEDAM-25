@@ -1,0 +1,283 @@
+/* Event Details Section */
+
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Jost:ital,wght@0,100..900;1,100..900&family=Cinzel:wght@400..900&family=Dancing+Script:wght@400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+  --primary-blue: rgb(0, 0, 60);
+  --secondary-blue: rgba(0, 17, 90, 0.5);
+  --text-black: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box; /* Important: Include padding and border in element's total width and height */
+}
+
+.details {
+  box-sizing: border-box;
+  margin: 3rem 0 3rem; /* Removed horizontal margins */
+  padding: 0 1rem; /* Added padding instead of horizontal margins */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Ensure it takes full width */
+  overflow: hidden; /* Hide any potential overflow */
+}
+
+.date-details {
+  display: flex;
+  font-weight: 200;
+  width: 60%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.vertical-text {
+  writing-mode: vertical-lr;
+  text-orientation: sideways;
+  transform: rotate(180deg);
+  font-size: 4.5rem;
+  font-family: 'Cinzel', serif;
+  color: var(--secondary-blue);
+  font-weight: 300;
+  letter-spacing: 2px;
+  height: max-content;
+}
+
+.d-place {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: end;
+  align-items: center;
+  font-family: 'Cinzel', serif;
+}
+
+.date-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  line-height: 1.5;
+  color: var(--text-black);
+  font-weight: 500;
+}
+
+.date-text {
+  font-family: 'Cinzel', serif;
+  font-size: 2.3rem;
+  font-weight: 400;
+  color: var(--primary-blue);
+  line-height: 1.6;
+}
+
+.details-image {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  position: relative;
+  width: 35%;
+  height: 46rem;
+}
+
+.details-image img {
+  position: absolute;
+  object-fit: cover;
+  object-position: center;
+  width: 100%; /* Make images responsive */
+  height: 100%;
+}
+
+.details-image img:first-child {
+  z-index: 1;
+  width: 70%;
+  height: auto;
+}
+
+.details-image img:last-child {
+  z-index: 2;
+  width: 58%;
+  height: auto;
+  top: 48%;
+  left: 35%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .details {
+    flex-direction: row;
+    gap: 3rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+    padding: 0 0.5rem;
+  }
+
+  .date-details {
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+  }
+
+  .vertical-text {
+    font-size: 3rem;
+    writing-mode: horizontal-tb;
+    transform: rotate(0deg);
+    text-align: center;
+  }
+
+  .details-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 0;
+  height: 85rem; /* Added a height */
+}
+
+.details-image img {
+  position: absolute; /* Changed to absolute */
+  object-fit: cover;
+  object-position: center;
+  width: 100%; /* Adjusted width */
+  height: auto;
+  top: 0;
+  left: 10%;
+  transform: translateX(-50%);
+}
+
+.details-image img:first-child {
+  width: 80%; /* Adjusted width */
+  height: auto;
+  z-index: 1;
+}
+
+.details-image img:last-child {
+  width: 60%; /* Adjusted width */
+  height: auto;
+  top: 35%; /* Adjusted top */
+  left: 17%; /* Adjusted left */
+  transform: translate(-50%, -30%); /* Adjusted transform */
+  z-index: 2;
+}
+
+}
+
+@media (max-width: 768px) {
+  .details {
+    flex-direction: column;
+    margin-bottom: 8rem;
+    padding: 0 0.5rem; /* Reduced padding */
+  }
+
+  .date-title {
+    font-size: 2rem;
+  }
+
+  .date-text {
+    font-size: 2.3rem;
+  }
+
+  .details-image {
+    width: 100%;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .details-image img:last-child {
+    margin-top: 16rem;
+    width: 15rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .details-image {
+    flex-direction: column;
+    height: auto;
+    gap: 0.5rem; /* Reduced gap */
+  }
+
+  .details-image img {
+    position: relative;
+    width: 90%; /* Increased width */
+    left: 0;
+    top: 0;
+  }
+
+  .details-image img:last-child {
+    margin-top: 0;
+    width: 70%; /* Increased width */
+  }
+
+  .date-title {
+    font-size: 1.5rem; /* Further reduced font size */
+  }
+
+  .date-text {
+    font-size: 1.8rem; /* Further reduced font size */
+  }
+
+  .d-place {
+    gap: 1rem; /* Reduced gap */
+  }
+}
+
+@media (max-width: 480px) {
+  .details {
+    padding: 0 1rem;
+    gap:1rem; /* Reduced gap */
+    margin-bottom: 0;
+  }
+
+  .vertical-text {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+  }
+
+  .details-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 0;
+    height: 35rem; /* Added a height */
+  }
+
+  .details-image img {
+    position: absolute; /* Changed to absolute */
+    object-fit: cover;
+    object-position: center;
+    width: 100%; /* Adjusted width */
+    height: auto;
+    top: 0;
+    left: 10%;
+    transform: translateX(-50%);
+  }
+
+  .details-image img:first-child {
+    width: 80%; /* Adjusted width */
+    height: auto;
+    z-index: 1;
+  }
+
+  .details-image img:last-child {
+    width: 60%; /* Adjusted width */
+    height: auto;
+    top: 40%; /* Adjusted top */
+    left: 17%; /* Adjusted left */
+    transform: translate(-50%, -30%); /* Adjusted transform */
+    z-index: 2;
+  }
+
+  .date-title {
+    font-size: 1.3rem;
+  }
+
+  .date-text {
+    font-size: 1.5rem;
+  }
+  .d-place {
+    gap: 1rem;
+  }
+}
+
