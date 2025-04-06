@@ -1,5 +1,3 @@
-'use client';
-
 import { useEffect, useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -93,7 +91,7 @@ export const CountdownTimer = () => {
           </motion.div>
         ) : (
           <>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-12 font-[Cinzel]">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 md:mb-12 font-[Cinzel]">
               Countdown to Our Big Day 💍
             </h2>
 
